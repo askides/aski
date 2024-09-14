@@ -8,7 +8,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "changeset": "changeset",
     "changeset:version": "changeset version",
-    "changeset:publish": "changeset publish"
+    "changeset:publish": "turbo build --filter @askides/elements && changeset publish"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.5.0",
