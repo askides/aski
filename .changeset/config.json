@@ -1,6 +1,6 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@3.0.3/schema.json",
-  "changelog": ["@changesets/cli/changelog", { "repo": "askides/aski" }],
+  "changelog": ["@changesets/changelog-github", { "repo": "askides/aski" }],
   "commit": false,
   "fixed": [],
   "linked": [],
