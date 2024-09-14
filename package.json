@@ -1,5 +1,5 @@
 {
-  "name": "aski",
+  "name": "askides",
   "private": true,
   "scripts": {
     "build": "turbo build",

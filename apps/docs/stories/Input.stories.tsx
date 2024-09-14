@@ -1,4 +1,4 @@
-import { Input } from '@aski/elements';
+import { Input } from '@askides/elements';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const opts = {

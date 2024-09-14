@@ -1,5 +1,5 @@
 import type { Preview } from '@storybook/react';
-import '@aski/elements/styles.css';
+import '@askides/elements/styles.css';
 
 const preview: Preview = {
   parameters: {

@@ -9,7 +9,7 @@ export default defineConfig({
   build: {
     lib: {
       formats: ['es'],
-      name: '@aski/elements',
+      name: '@askides/elements',
       entry: resolve(__dirname, 'src/index.ts'),
       fileName: (format) => `main.${format}.js`,
     },

@@ -9,7 +9,7 @@
     "build": "storybook build --docs --output-dir dist"
   },
   "dependencies": {
-    "@aski/elements": "workspace:*",
+    "@askides/elements": "workspace:*",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },

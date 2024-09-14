@@ -1,4 +1,4 @@
-import { Button } from '@aski/elements';
+import { Button } from '@askides/elements';
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 

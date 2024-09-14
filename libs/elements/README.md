@@ -1,3 +1,3 @@
-# @aski/elements
+# @askides/elements
 
 Readme in progress.

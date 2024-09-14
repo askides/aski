@@ -1,4 +1,4 @@
-import { Button, Card } from '@aski/elements';
+import { Button, Card } from '@askides/elements';
 import type { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
 
