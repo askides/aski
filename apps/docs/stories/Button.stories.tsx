@@ -15,10 +15,11 @@ const opts = {
 type Story = StoryObj<typeof opts>;
 
 export const Primary: Story = {
-  args: {
-    primary: true,
-    label: 'Button',
-  },
+  args: { art: 'primary' },
+};
+
+export const Secondary: Story = {
+  args: { art: 'secondary' },
 };
 
 export default opts;

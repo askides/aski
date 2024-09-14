@@ -3,9 +3,9 @@ import { tv } from 'tailwind-variants';
 export const styles = tv({
   base: 'font-medium bg-blue-500 text-white rounded-full active:opacity-80',
   variants: {
-    color: {
+    art: {
       primary: 'bg-blue-500 text-white',
-      secondary: 'bg-purple-500 text-white',
+      secondary: 'bg-green-500 text-white',
     },
     size: {
       sm: 'text-sm',
@@ -21,6 +21,6 @@ export const styles = tv({
   ],
   defaultVariants: {
     size: 'md',
-    color: 'primary',
+    art: 'primary',
   },
 });
