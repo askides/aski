@@ -7,5 +7,6 @@
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
   "access": "public",
-  "ignore": []
+  "ignore": [],
+  "privatePackages": false
 }
