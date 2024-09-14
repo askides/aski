@@ -1,12 +1,15 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@3.0.3/schema.json",
-  "changelog": "@changesets/cli/changelog",
-  "commit": true,
+  "changelog": ["@changesets/cli/changelog", { "repo": "askides/aski" }],
+  "commit": false,
   "fixed": [],
   "linked": [],
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
   "access": "public",
   "ignore": [],
-  "privatePackages": false
+  "privatePackages": false,
+  "___experimentalUnsafeOptions_WILL_CHANGE_IN_PATCH": {
+    "onlyUpdatePeerDependentsWhenOutOfRange": true
+  }
 }
