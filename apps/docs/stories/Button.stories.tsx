@@ -10,16 +10,28 @@ const opts = {
     onClick: fn(),
     children: 'Button',
   },
+  argTypes: {
+    art: {
+      control: 'select',
+      options: ['ichi', 'ni'],
+      description: 'The art style of the button',
+    },
+    mass: {
+      control: 'select',
+      options: ['sm', 'md', 'lg'],
+      description: 'The mass of the button',
+    },
+  },
 } satisfies Meta<typeof Button>;
 
 type Story = StoryObj<typeof opts>;
 
-export const Primary: Story = {
-  args: { art: 'primary' },
+export const Ichi: Story = {
+  args: { art: 'ichi' },
 };
 
-export const Secondary: Story = {
-  args: { art: 'secondary' },
+export const Ni: Story = {
+  args: { art: 'ni' },
 };
 
 export default opts;

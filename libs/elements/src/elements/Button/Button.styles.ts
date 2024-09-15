@@ -1,26 +1,20 @@
 import { tv } from 'tailwind-variants';
 
 export const styles = tv({
-  base: 'font-medium bg-blue-500 text-white rounded-full active:opacity-80',
+  base: 'inline-flex items-center gap-x-2 font-medium rounded-lg border focus:outline-none disabled:opacity-50 disabled:pointer-events-none',
   variants: {
     art: {
-      primary: 'bg-blue-500 text-white',
-      secondary: 'bg-green-500 text-white',
+      ichi: 'border-transparent bg-emerald-500 text-white shadow-sm hover:bg-emerald-600 focus:bg-emerald-600 active:shadow-inner',
+      ni: 'border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:bg-gray-50 active:shadow-inner',
     },
-    size: {
-      sm: 'text-sm',
-      md: 'text-base',
-      lg: 'px-4 py-3 text-lg',
+    mass: {
+      sm: 'px-2 py-1 text-xs',
+      md: 'py-2 px-3 text-sm',
+      lg: 'py-2.5 px-4 text-base',
     },
   },
-  compoundVariants: [
-    {
-      size: ['sm', 'md'],
-      class: 'px-3 py-1',
-    },
-  ],
   defaultVariants: {
-    size: 'md',
-    art: 'primary',
+    mass: 'md',
+    art: 'ichi',
   },
 });

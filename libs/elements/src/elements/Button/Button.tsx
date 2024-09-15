@@ -10,10 +10,10 @@ export interface ButtonProps
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, asChild = false, art, ...props }, ref) => {
+  ({ className, asChild = false, art, mass, ...props }, ref) => {
     const Comp = asChild ? Slot : 'button';
-    return <Comp ref={ref} className={styles({ className, art })} {...props} />;
-  }
+    return <Comp ref={ref} className={styles({ className, art, mass })} {...props} />;
+  },
 );
 
 Button.displayName = 'Button';
