@@ -24,7 +24,8 @@
   "module": "./dist/main.es.js",
   "exports": {
     ".": {
-      "import": "./dist/main.es.js"
+      "import": "./dist/main.es.js",
+      "types": "./dist/main.es.d.ts"
     },
     "./styles.css": "./dist/index.css"
   },
