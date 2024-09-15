@@ -13,14 +13,34 @@ const opts = {
 
 type Story = StoryObj<typeof opts>;
 
-export const Basic: Story = {};
-
-export const WithActions: Story = {
+export const Full: Story = {
   render: (args) => (
-    <Card {...args}>
-      <p>This is a card with actions.</p>
-      <Button>Confirm</Button>
-      <Button>Undo</Button>
+    <Card {...args} className="max-w-lg">
+      <Card.Header>
+        <Card.Title>Tokyo - The city that never sleeps.</Card.Title>
+        <Card.Description>
+          Tokyo, Japan’s busy capital, mixes the ultramodern and the
+          traditional, from neon-lit skyscrapers to historic temples.
+        </Card.Description>
+      </Card.Header>
+      <Card.Actions>
+        <Button art="ichi">Confirm</Button>
+        <Button art="ni">Undo</Button>
+      </Card.Actions>
+    </Card>
+  ),
+};
+
+export const NoActions: Story = {
+  render: (args) => (
+    <Card {...args} className="max-w-lg">
+      <Card.Header>
+        <Card.Title>Tokyo - The city that never sleeps.</Card.Title>
+        <Card.Description>
+          Tokyo, Japan’s busy capital, mixes the ultramodern and the
+          traditional, from neon-lit skyscrapers to historic temples.
+        </Card.Description>
+      </Card.Header>
     </Card>
   ),
 };

@@ -2,17 +2,68 @@ import { forwardRef } from 'react';
 import { styles } from './Card.styles';
 import { Slot } from '@radix-ui/react-slot';
 
+const { card, header, title, description, actions } = styles();
+
 export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   asChild?: boolean;
 }
 
-const Card = forwardRef<HTMLDivElement, CardProps>(
+const CardBase = forwardRef<HTMLDivElement, CardProps>(
   ({ className, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : 'div';
-    return <Comp ref={ref} className={styles({ className })} {...props} />;
-  }
+
+    return <Comp ref={ref} className={card({ className })} {...props} />;
+  },
 );
 
-Card.displayName = 'Card';
+CardBase.displayName = 'CardBase';
 
-export { Card };
+export interface CardHeaderProps extends React.HTMLAttributes<HTMLDivElement> {}
+
+const CardHeader = forwardRef<HTMLDivElement, CardHeaderProps>(
+  ({ className, ...props }, ref) => {
+    return <div ref={ref} className={header({ className })} {...props} />;
+  },
+);
+
+CardHeader.displayName = 'CardHeader';
+
+export interface CardTitleProps
+  extends React.HTMLAttributes<HTMLHeadingElement> {}
+
+const CardTitle = forwardRef<HTMLHeadingElement, CardTitleProps>(
+  ({ className, ...props }, ref) => {
+    return <h2 ref={ref} className={title({ className })} {...props} />;
+  },
+);
+
+CardTitle.displayName = 'CardTitle';
+
+export interface CardDescriptionProps
+  extends React.HTMLAttributes<HTMLParagraphElement> {}
+
+const CardDescription = forwardRef<HTMLParagraphElement, CardDescriptionProps>(
+  ({ className, ...props }, ref) => {
+    return <p ref={ref} className={description({ className })} {...props} />;
+  },
+);
+
+CardDescription.displayName = 'CardDescription';
+
+export interface CardActionsProps
+  extends React.HTMLAttributes<HTMLDivElement> {}
+
+const CardActions = forwardRef<HTMLDivElement, CardActionsProps>(
+  ({ className, ...props }, ref) => {
+    return <div ref={ref} className={actions({ className })} {...props} />;
+  },
+);
+
+CardActions.displayName = 'CardActions';
+
+export const Card = Object.assign(CardBase, {
+  Header: CardHeader,
+  Title: CardTitle,
+  Description: CardDescription,
+  Actions: CardActions,
+});
