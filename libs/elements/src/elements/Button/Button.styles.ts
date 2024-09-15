@@ -8,9 +8,9 @@ export const styles = tv({
       ni: 'border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-zinc-100 active:shadow-inner',
     },
     mass: {
-      sm: 'px-2 py-1 text-xs',
-      md: 'py-2 px-3 text-sm',
-      lg: 'py-2.5 px-4 text-base',
+      sm: 'h-8 px-2 text-xs',
+      md: 'h-10 px-3 text-sm',
+      lg: 'h-12 px-4 text-base',
     },
   },
   defaultVariants: {
