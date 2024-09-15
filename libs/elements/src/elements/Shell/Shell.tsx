@@ -1,5 +1,5 @@
-import { forwardRef, ReactElement, ReactNode } from "react";
-import { styles } from "./Shell.styles";
+import { forwardRef, ReactElement } from 'react';
+import { styles } from './Shell.styles';
 
 export interface ShellProps extends React.HTMLAttributes<HTMLDivElement> {
   Navbar?: ReactElement;
@@ -23,6 +23,6 @@ const Shell = forwardRef<HTMLDivElement, ShellProps>(
   },
 );
 
-Shell.displayName = "Shell";
+Shell.displayName = 'Shell';
 
 export { Shell };
