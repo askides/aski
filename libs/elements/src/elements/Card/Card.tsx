@@ -2,7 +2,7 @@ import { forwardRef } from 'react';
 import { styles } from './Card.styles';
 import { Slot } from '@radix-ui/react-slot';
 
-const { card, header, title, description, actions } = styles();
+const { card, header, title, description, body, actions } = styles();
 
 export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   asChild?: boolean;
@@ -50,6 +50,16 @@ const CardDescription = forwardRef<HTMLParagraphElement, CardDescriptionProps>(
 
 CardDescription.displayName = 'CardDescription';
 
+export interface CardBodyProps extends React.HTMLAttributes<HTMLDivElement> {}
+
+const CardBody = forwardRef<HTMLDivElement, CardBodyProps>(
+  ({ className, ...props }, ref) => {
+    return <div ref={ref} className={body({ className })} {...props} />;
+  },
+);
+
+CardBody.displayName = 'CardBody';
+
 export interface CardActionsProps
   extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -65,5 +75,6 @@ export const Card = Object.assign(CardBase, {
   Header: CardHeader,
   Title: CardTitle,
   Description: CardDescription,
+  Body: CardBody,
   Actions: CardActions,
 });
