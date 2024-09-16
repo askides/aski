@@ -30,12 +30,13 @@
     "./styles.css": "./dist/index.css"
   },
   "scripts": {
-    "dev": "vite",
+    "dev": "vite build --watch",
     "build": "vite build",
     "preview": "vite preview",
     "ci": "npm run build"
   },
   "dependencies": {
+    "@radix-ui/react-label": "^2.1.0",
     "@radix-ui/react-slot": "^1.1.0",
     "tailwind-variants": "^0.2.1"
   },

@@ -8,3 +8,4 @@ export * from './elements/Card';
 export * from './elements/Shell';
 export * from './elements/Navbar';
 export * from './elements/Sidebar';
+export * from './elements/Label';
