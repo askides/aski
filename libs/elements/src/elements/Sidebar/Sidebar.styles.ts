@@ -5,8 +5,8 @@ export const styles = tv({
     aside: 'p-6 w-60 bg-white',
     nav: 'space-y-8 text-sm',
     group: 'space-y-2',
-    groupTitle: 'text-sm font-semibold tracking-widest uppercase dark:text-gray-600',
-    groupItems: 'flex flex-col space-y-1',
-    groupItem: '',
+    groupTitle: 'text-xs font-semibold uppercase text-zinc-500',
+    groupItems: 'flex flex-col',
+    groupItem: '-mx-3 px-3 h-8 text-zinc-800 flex items-center gap-x-2 rounded-md font-medium transition-colors duration-200 cursor-pointer hover:bg-zinc-100',
   },
 });

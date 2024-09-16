@@ -1,6 +1,13 @@
 import { Navbar, Shell, Sidebar } from '@askides/elements';
 import type { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
+import {
+  ChartNoAxesCombined,
+  FileWarning,
+  LayoutDashboard,
+  PackageSearch,
+  Users,
+} from 'lucide-react';
 
 const opts = {
   title: 'Example/Shell',
@@ -25,11 +32,33 @@ export const Full: Story = {
       Sidebar={
         <Sidebar>
           <Sidebar.Group>
-            <Sidebar.GroupTitle>Group Title</Sidebar.GroupTitle>
+            <Sidebar.GroupTitle>Informations</Sidebar.GroupTitle>
             <Sidebar.GroupItems>
-              <div>Item 1</div>
-              <div>Item 2</div>
-              <div>Item 3</div>
+              <Sidebar.GroupItem>
+                <LayoutDashboard size={16} />
+                <span>Dashboard</span>
+              </Sidebar.GroupItem>
+              <Sidebar.GroupItem>
+                <Users size={16} />
+                <span>Customers</span>
+              </Sidebar.GroupItem>
+              <Sidebar.GroupItem>
+                <PackageSearch size={16} />
+                <span>Products</span>
+              </Sidebar.GroupItem>
+            </Sidebar.GroupItems>
+          </Sidebar.Group>
+          <Sidebar.Group>
+            <Sidebar.GroupTitle>Reports</Sidebar.GroupTitle>
+            <Sidebar.GroupItems>
+              <Sidebar.GroupItem>
+                <ChartNoAxesCombined size={16} />
+                <span>Orders</span>
+              </Sidebar.GroupItem>
+              <Sidebar.GroupItem>
+                <FileWarning size={16} />
+                <span>Complains</span>
+              </Sidebar.GroupItem>
             </Sidebar.GroupItems>
           </Sidebar.Group>
         </Sidebar>
@@ -66,9 +95,9 @@ export const JustSidebar: Story = {
           <Sidebar.Group>
             <Sidebar.GroupTitle>Group Title</Sidebar.GroupTitle>
             <Sidebar.GroupItems>
-              <div>Item 1</div>
-              <div>Item 2</div>
-              <div>Item 3</div>
+              <Sidebar.GroupItem>Dashboard</Sidebar.GroupItem>
+              <Sidebar.GroupItem>Customers</Sidebar.GroupItem>
+              <Sidebar.GroupItem>Products</Sidebar.GroupItem>
             </Sidebar.GroupItems>
           </Sidebar.Group>
         </Sidebar>

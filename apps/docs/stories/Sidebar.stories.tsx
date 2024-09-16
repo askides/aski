@@ -15,11 +15,19 @@ export const Base: Story = {
   render: (args) => (
     <Sidebar {...args}>
       <Sidebar.Group>
-        <Sidebar.GroupTitle>Group Title</Sidebar.GroupTitle>
+        <Sidebar.GroupTitle>Informations</Sidebar.GroupTitle>
         <Sidebar.GroupItems>
-          <div>Item 1</div>
-          <div>Item 2</div>
-          <div>Item 3</div>
+          <Sidebar.GroupItem>Item 1</Sidebar.GroupItem>
+          <Sidebar.GroupItem>Item 2</Sidebar.GroupItem>
+          <Sidebar.GroupItem>Item 3</Sidebar.GroupItem>
+        </Sidebar.GroupItems>
+      </Sidebar.Group>
+      <Sidebar.Group>
+        <Sidebar.GroupTitle>Reports</Sidebar.GroupTitle>
+        <Sidebar.GroupItems>
+          <Sidebar.GroupItem>Item 1</Sidebar.GroupItem>
+          <Sidebar.GroupItem>Item 2</Sidebar.GroupItem>
+          <Sidebar.GroupItem>Item 3</Sidebar.GroupItem>
         </Sidebar.GroupItems>
       </Sidebar.Group>
     </Sidebar>
