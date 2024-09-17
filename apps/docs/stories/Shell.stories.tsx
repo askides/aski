@@ -1,4 +1,12 @@
-import { Navbar, Shell, Sidebar } from '@askides/elements';
+import {
+  Button,
+  Card,
+  Navbar,
+  Page,
+  Shell,
+  Sidebar,
+  Table,
+} from '@askides/elements';
 import type { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
 import {
@@ -70,7 +78,58 @@ export const Full: Story = {
         </Sidebar>
       }
     >
-      <div className="p-6">Content</div>
+      <Page>
+        <Page.Header>
+          <Page.Title>Dashboard</Page.Title>
+          <Page.Description>
+            Welcome to your dashboard. Here you can find all the information you
+            need.
+          </Page.Description>
+        </Page.Header>
+        <Page.Content>
+          <Table className="border border-zinc-100">
+            <Table.Caption>A list of your recent invoices.</Table.Caption>
+            <Table.Header>
+              <Table.Row>
+                <Table.Head className="w-[100px]">Invoice</Table.Head>
+                <Table.Head>Status</Table.Head>
+                <Table.Head>Method</Table.Head>
+                <Table.Head className="text-right">Amount</Table.Head>
+              </Table.Row>
+            </Table.Header>
+            <Table.Body>
+              <Table.Row>
+                <Table.Cell className="font-medium">INV001</Table.Cell>
+                <Table.Cell>Paid</Table.Cell>
+                <Table.Cell>Credit Card</Table.Cell>
+                <Table.Cell className="text-right">
+                  <Button mass="sm" art="ni">
+                    Add Invoice
+                  </Button>
+                </Table.Cell>
+              </Table.Row>
+              <Table.Row>
+                <Table.Cell className="font-medium">INV002</Table.Cell>
+                <Table.Cell>Paid</Table.Cell>
+                <Table.Cell>Paypal</Table.Cell>
+                <Table.Cell className="text-right">$150.00</Table.Cell>
+              </Table.Row>
+              <Table.Row>
+                <Table.Cell className="font-medium">INV003</Table.Cell>
+                <Table.Cell>Paid</Table.Cell>
+                <Table.Cell>Credit Card</Table.Cell>
+                <Table.Cell className="text-right">$350.00</Table.Cell>
+              </Table.Row>
+              <Table.Row>
+                <Table.Cell className="font-medium">INV004</Table.Cell>
+                <Table.Cell>Paid</Table.Cell>
+                <Table.Cell>Paypal</Table.Cell>
+                <Table.Cell className="text-right">$450.00</Table.Cell>
+              </Table.Row>
+            </Table.Body>
+          </Table>
+        </Page.Content>
+      </Page>
     </Shell>
   ),
 };

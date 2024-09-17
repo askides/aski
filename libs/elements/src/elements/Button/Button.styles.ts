@@ -5,7 +5,9 @@ export const styles = tv({
   variants: {
     art: {
       ichi: 'border-transparent bg-emerald-500 text-white shadow-sm hover:bg-emerald-600 active:shadow-inner',
-      ni: 'border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-zinc-100 active:shadow-inner',
+      ni: 'border-gray-200 bg-white text-zinc-800 shadow-sm hover:bg-zinc-100 active:shadow-inner',
+      // Ghost Variant
+      san: 'border-transparent bg-transparent text-zinc-800 shadow-none hover:bg-zinc-100',
     },
     mass: {
       sm: 'h-8 px-2 text-xs',
