@@ -1,6 +1,6 @@
-import { forwardRef } from "react";
-import { styles } from "./Navbar.styles";
-import { Slot } from "@radix-ui/react-slot";
+import { forwardRef } from 'react';
+import { styles } from './Navbar.styles';
+import { Slot } from '@radix-ui/react-slot';
 
 export interface ShellProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -16,7 +16,7 @@ const NavbarBase = forwardRef<HTMLDivElement, NavbarProps>(
     return (
       <header ref={ref} className={header()} {...props}>
         <nav className={nav()}>
-          <a className="flex-none font-semibold text-xl text-black focus:outline-none focus:opacity-80">
+          <a className="flex-none font-semibold text-lg tracking-tight text-zinc-900 focus:outline-none focus:opacity-80">
             {logo}
           </a>
           <div className={items()}>{children}</div>
@@ -26,7 +26,7 @@ const NavbarBase = forwardRef<HTMLDivElement, NavbarProps>(
   },
 );
 
-NavbarBase.displayName = "NavbarBase";
+NavbarBase.displayName = 'NavbarBase';
 
 export interface NavbarItemProps extends React.HTMLAttributes<HTMLDivElement> {
   asChild?: boolean;
@@ -34,7 +34,7 @@ export interface NavbarItemProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const NavbarItem = forwardRef<HTMLDivElement, NavbarItemProps>(
   ({ asChild = false, className, children, ...props }, ref) => {
-    const Comp = asChild ? Slot : "div";
+    const Comp = asChild ? Slot : 'div';
 
     return (
       <Comp ref={ref} className={item({ className })} {...props}>
@@ -44,6 +44,6 @@ const NavbarItem = forwardRef<HTMLDivElement, NavbarItemProps>(
   },
 );
 
-NavbarItem.displayName = "NavbarItem";
+NavbarItem.displayName = 'NavbarItem';
 
 export const Navbar = Object.assign(NavbarBase, { Item: NavbarItem });

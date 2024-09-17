@@ -14,6 +14,9 @@ const opts = {
   component: Shell,
   parameters: { layout: 'fullscreen' },
   args: {},
+  argTypes: {
+    className: { control: { type: 'text' } },
+  },
 } satisfies Meta<typeof Shell>;
 
 type Story = StoryObj<typeof opts>;
@@ -24,9 +27,12 @@ export const Full: Story = {
       {...args}
       Navbar={
         <Navbar logo="Example">
-          <Navbar.Item>Item 1</Navbar.Item>
-          <Navbar.Item>Item 2</Navbar.Item>
-          <Navbar.Item>Item 3</Navbar.Item>
+          <Navbar.Item>Settings</Navbar.Item>
+          <Navbar.Item asChild>
+            <div className="h-9 w-9 flex items-center justify-center rounded-full shadow-sm bg-zinc-100 border border-zinc-200">
+              <span className="text-xs font-semibold text-zinc-700">AD</span>
+            </div>
+          </Navbar.Item>
         </Navbar>
       }
       Sidebar={
@@ -78,6 +84,7 @@ export const JustNavbar: Story = {
           <Navbar.Item>Item 1</Navbar.Item>
           <Navbar.Item>Item 2</Navbar.Item>
           <Navbar.Item>Item 3</Navbar.Item>
+          <Navbar.Item>Item 3</Navbar.Item>
         </Navbar>
       }
     >
@@ -93,11 +100,33 @@ export const JustSidebar: Story = {
       Sidebar={
         <Sidebar>
           <Sidebar.Group>
-            <Sidebar.GroupTitle>Group Title</Sidebar.GroupTitle>
+            <Sidebar.GroupTitle>Informations</Sidebar.GroupTitle>
             <Sidebar.GroupItems>
-              <Sidebar.GroupItem>Dashboard</Sidebar.GroupItem>
-              <Sidebar.GroupItem>Customers</Sidebar.GroupItem>
-              <Sidebar.GroupItem>Products</Sidebar.GroupItem>
+              <Sidebar.GroupItem>
+                <LayoutDashboard size={16} />
+                <span>Dashboard</span>
+              </Sidebar.GroupItem>
+              <Sidebar.GroupItem>
+                <Users size={16} />
+                <span>Customers</span>
+              </Sidebar.GroupItem>
+              <Sidebar.GroupItem>
+                <PackageSearch size={16} />
+                <span>Products</span>
+              </Sidebar.GroupItem>
+            </Sidebar.GroupItems>
+          </Sidebar.Group>
+          <Sidebar.Group>
+            <Sidebar.GroupTitle>Reports</Sidebar.GroupTitle>
+            <Sidebar.GroupItems>
+              <Sidebar.GroupItem>
+                <ChartNoAxesCombined size={16} />
+                <span>Orders</span>
+              </Sidebar.GroupItem>
+              <Sidebar.GroupItem>
+                <FileWarning size={16} />
+                <span>Complains</span>
+              </Sidebar.GroupItem>
             </Sidebar.GroupItems>
           </Sidebar.Group>
         </Sidebar>
