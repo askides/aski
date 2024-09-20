@@ -14,6 +14,7 @@ import {
   FileWarning,
   LayoutDashboard,
   PackageSearch,
+  UserRoundPen,
   Users,
 } from 'lucide-react';
 
@@ -158,6 +159,9 @@ export const JustSidebar: Story = {
       {...args}
       Sidebar={
         <Sidebar>
+          <Sidebar.Header>
+            <Sidebar.Logo>Askides</Sidebar.Logo>
+          </Sidebar.Header>
           <Sidebar.Group>
             <Sidebar.GroupTitle>Informations</Sidebar.GroupTitle>
             <Sidebar.GroupItems>
@@ -191,7 +195,16 @@ export const JustSidebar: Story = {
         </Sidebar>
       }
     >
-      <div className="p-6">Content</div>
+      <Page>
+        <Page.Header>
+          <Page.Title>Dashboard</Page.Title>
+          <Page.Description>
+            Welcome to your dashboard. Here you can find all the information you
+            need.
+          </Page.Description>
+        </Page.Header>
+        <Page.Content>Hello</Page.Content>
+      </Page>
     </Shell>
   ),
 };

@@ -2,8 +2,10 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
-    aside: 'p-6 w-60 bg-white',
-    nav: 'space-y-8 text-sm',
+    aside: 'p-6 w-60 bg-white border-r shadow-md shadow-zinc-200 flex',
+    header: 'py-6 -my-6',
+    logo: 'font-semibold text-lg tracking-tight text-zinc-900',
+    nav: 'text-sm flex flex-1 flex-col gap-y-8',
     group: 'space-y-2',
     groupTitle: 'text-xs font-semibold uppercase text-zinc-500',
     groupItems: 'flex flex-col',
