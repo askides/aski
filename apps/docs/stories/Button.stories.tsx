@@ -13,7 +13,7 @@ const opts = {
   argTypes: {
     art: {
       control: 'select',
-      options: ['ichi', 'ni'],
+      options: ['ichi', 'ni', 'san'],
       description: 'The art style of the button',
     },
     mass: {
@@ -32,6 +32,10 @@ export const Ichi: Story = {
 
 export const Ni: Story = {
   args: { art: 'ni' },
+};
+
+export const San: Story = {
+  args: { art: 'san' },
 };
 
 export default opts;
