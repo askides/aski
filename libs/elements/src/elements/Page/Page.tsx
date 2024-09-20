@@ -1,4 +1,4 @@
-import { forwardRef, ReactElement } from 'react';
+import { forwardRef } from 'react';
 import { styles } from './Page.styles';
 
 const { page, header, title, description, content } = styles();
