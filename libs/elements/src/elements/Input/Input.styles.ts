@@ -1,5 +1,5 @@
 import { tv } from 'tailwind-variants';
 
 export const styles = tv({
-  base: 'h-10 px-4 w-full ring-2 ring-inset rounded-lg text-sm ring-zinc-200 focus:outline-none focus:ring-emerald-500',
+  base: 'h-10 px-4 w-full border border-zinc-200 rounded-lg shadow-sm text-sm focus:outline-none focus:ring-1 focus:border-emerald-500 focus:ring-emerald-500',
 });
