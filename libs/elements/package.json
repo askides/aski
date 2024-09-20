@@ -5,7 +5,10 @@
   "license": "MIT",
   "keywords": [
     "react",
+    "ui",
+    "components",
     "design",
+    "system",
     "tailwindcss"
   ],
   "homepage": "https://github.com/askides/aski",
@@ -26,8 +29,7 @@
     ".": {
       "import": "./dist/main.es.js",
       "types": "./dist/main.es.d.ts"
-    },
-    "./styles.css": "./dist/index.css"
+    }
   },
   "scripts": {
     "dev": "vite build --watch",
@@ -44,9 +46,6 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
-    "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.45",
-    "tailwindcss": "^3.4.11",
     "typescript": "^5.5.3",
     "vite": "^5.4.1",
     "vite-plugin-dts": "^4.2.1"

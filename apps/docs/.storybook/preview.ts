@@ -1,6 +1,5 @@
 import type { Preview } from '@storybook/react';
 
-import '@askides/elements/styles.css';
 import '../styles.css';
 
 const preview: Preview = {
