@@ -11,6 +11,7 @@
     "system",
     "tailwindcss"
   ],
+  "sideEffects": false,
   "homepage": "https://github.com/askides/aski",
   "bugs": {
     "url": "https://github.com/askides/aski/issues"
