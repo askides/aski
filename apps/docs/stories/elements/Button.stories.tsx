@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 
 const opts = {
-  title: 'Example/Button',
+  title: 'Elements/Button',
   component: Button,
   parameters: { layout: 'centered' },
   args: {

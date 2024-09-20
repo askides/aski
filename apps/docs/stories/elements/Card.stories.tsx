@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
 
 const opts = {
-  title: 'Example/Card',
+  title: 'Elements/Card',
   component: Card,
   parameters: { layout: 'centered' },
   args: {

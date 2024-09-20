@@ -18,7 +18,7 @@ import {
 import * as React from 'react';
 
 const opts = {
-  title: 'Example/Shell',
+  title: 'Elements/Shell',
   component: Shell,
   parameters: { layout: 'fullscreen' },
   args: {

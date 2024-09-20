@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
 
 const opts = {
-  title: 'Example/Page',
+  title: 'Elements/Page',
   component: Page,
   parameters: { layout: 'fullscreen' },
   args: {},

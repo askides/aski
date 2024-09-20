@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
 
 const opts = {
-  title: 'Example/Sidebar',
+  title: 'Elements/Sidebar',
   component: Sidebar,
   parameters: { layout: 'fullscreen' },
   args: {},

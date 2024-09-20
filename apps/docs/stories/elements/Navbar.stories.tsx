@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
 
 const opts = {
-  title: 'Example/Navbar',
+  title: 'Elements/Navbar',
   component: Navbar,
   parameters: { layout: 'fullscreen' },
   args: {},
