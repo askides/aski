@@ -1,4 +1,5 @@
 import type { Preview } from '@storybook/react';
+import React, { useEffect } from 'react';
 
 import '../styles.css';
 
@@ -12,6 +13,15 @@ const preview: Preview = {
       },
     },
   },
+  decorators: [
+    (Story) => {
+      useEffect(() => {
+        document.body.classList.add('antialiased');
+      }, []);
+
+      return <Story />;
+    },
+  ],
 };
 
 export default preview;

@@ -4,29 +4,51 @@ import { Slot } from '@radix-ui/react-slot';
 
 export interface ShellProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-const { header, nav, items, item } = styles();
+const { header, logo, nav, items, item } = styles();
 
 // Navbar
-export interface NavbarProps extends React.HTMLAttributes<HTMLDivElement> {
-  logo?: React.ReactNode;
-}
+export interface NavbarProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 const NavbarBase = forwardRef<HTMLDivElement, NavbarProps>(
-  ({ className, logo, children, ...props }, ref) => {
+  ({ className, children, ...props }, ref) => {
     return (
       <header ref={ref} className={header()} {...props}>
-        <nav className={nav()}>
-          <a className="flex-none font-semibold text-lg tracking-tight text-zinc-900 focus:outline-none focus:opacity-80">
-            {logo}
-          </a>
-          <div className={items()}>{children}</div>
-        </nav>
+        <nav className={nav()}>{children}</nav>
       </header>
     );
   },
 );
 
 NavbarBase.displayName = 'NavbarBase';
+
+export interface NavbarLogoProps extends React.HTMLAttributes<HTMLDivElement> {}
+
+const NavbarLogo = forwardRef<HTMLDivElement, NavbarLogoProps>(
+  ({ className, children, ...props }, ref) => {
+    return (
+      <div ref={ref} className={logo({ className })} {...props}>
+        {children}
+      </div>
+    );
+  },
+);
+
+NavbarLogo.displayName = 'NavbarLogo';
+
+export interface NavbarItemsProps
+  extends React.HTMLAttributes<HTMLDivElement> {}
+
+const NavbarItems = forwardRef<HTMLDivElement, NavbarItemsProps>(
+  ({ className, children, ...props }, ref) => {
+    return (
+      <nav ref={ref} className={items({ className })} {...props}>
+        {children}
+      </nav>
+    );
+  },
+);
+
+NavbarItems.displayName = 'NavbarItems';
 
 export interface NavbarItemProps extends React.HTMLAttributes<HTMLDivElement> {
   asChild?: boolean;
@@ -46,4 +68,8 @@ const NavbarItem = forwardRef<HTMLDivElement, NavbarItemProps>(
 
 NavbarItem.displayName = 'NavbarItem';
 
-export const Navbar = Object.assign(NavbarBase, { Item: NavbarItem });
+export const Navbar = Object.assign(NavbarBase, {
+  Logo: NavbarLogo,
+  Items: NavbarItems,
+  Item: NavbarItem,
+});

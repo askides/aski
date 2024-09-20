@@ -2,9 +2,10 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
-    header: 'flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-white text-sm py-4',
-    nav: ' w-full px-6 sm:flex sm:items-center sm:justify-between',
-    items: 'flex flex-row items-center gap-5 mt-5 pb-2 overflow-x-auto sm:justify-end sm:mt-0 sm:ps-5 sm:pb-0 sm:overflow-x-visible [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300',
-    item: 'font-medium text-zinc-700 hover:text-emerald-500 focus:outline-none focus:text-emerald-500',
+    header: 'flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-white text-sm h-16 isolate border-b',
+    nav: ' w-full px-6 flex items-center gap-x-6',
+    logo: 'font-semibold text-lg tracking-tight text-zinc-900',
+    items: 'flex items-center gap-x-0.5',
+    item: 'font-medium text-zinc-900 transition-colors duration-200 hover:bg-zinc-100 px-3 cursor-pointer py-2 rounded-md',
   },
 });

@@ -1,0 +1,1 @@
+export { Pattern } from './Pattern';

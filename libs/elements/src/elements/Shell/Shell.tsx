@@ -12,11 +12,12 @@ const Shell = forwardRef<HTMLDivElement, ShellProps>(
   ({ className, Navbar, Sidebar, children, ...props }, ref) => {
     return (
       <div ref={ref} className={shell({ className })} {...props}>
-        {Navbar && <div className={navbar()}>{Navbar}</div>}
-
         <div className={container()}>
           {Sidebar && <div className={aside()}>{Sidebar}</div>}
-          <div className={main()}>{children}</div>
+          <div className={main()}>
+            {Navbar && <div className={navbar()}>{Navbar}</div>}
+            {children}
+          </div>
         </div>
       </div>
     );

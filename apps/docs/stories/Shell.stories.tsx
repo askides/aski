@@ -1,28 +1,52 @@
 import {
-  Button,
+  Avatar,
   Card,
   Navbar,
   Page,
+  Pattern,
   Shell,
   Sidebar,
-  Table,
 } from '@askides/elements';
 import type { Meta, StoryObj } from '@storybook/react';
-import * as React from 'react';
 import {
   ChartNoAxesCombined,
   FileWarning,
   LayoutDashboard,
   PackageSearch,
-  UserRoundPen,
   Users,
 } from 'lucide-react';
+import * as React from 'react';
 
 const opts = {
   title: 'Example/Shell',
   component: Shell,
   parameters: { layout: 'fullscreen' },
-  args: {},
+  args: {
+    children: (
+      <Page>
+        <Page.Header>
+          <Page.Title>Dashboard</Page.Title>
+          <Page.Description>
+            Welcome to your dashboard. Here you can find all the information you
+            need.
+          </Page.Description>
+        </Page.Header>
+        <Page.Content>
+          <div className="space-y-5">
+            <Card>
+              <Pattern className="h-48" />
+            </Card>
+            <Card>
+              <Pattern className="h-64" />
+            </Card>
+            <Card>
+              <Pattern className="h-48" />
+            </Card>
+          </div>
+        </Page.Content>
+      </Page>
+    ),
+  },
   argTypes: {
     className: { control: { type: 'text' } },
   },
@@ -31,21 +55,26 @@ const opts = {
 type Story = StoryObj<typeof opts>;
 
 export const Full: Story = {
-  render: (args) => (
+  render: ({ children, ...args }) => (
     <Shell
       {...args}
       Navbar={
-        <Navbar logo="Example">
-          <Navbar.Item>Settings</Navbar.Item>
-          <Navbar.Item asChild>
-            <div className="h-9 w-9 flex items-center justify-center rounded-full shadow-sm bg-zinc-100 border border-zinc-200">
-              <span className="text-xs font-semibold text-zinc-700">AD</span>
-            </div>
-          </Navbar.Item>
+        <Navbar>
+          <Navbar.Logo>Statistics</Navbar.Logo>
+          <Navbar.Items className="ml-auto">
+            <Navbar.Item>Settings</Navbar.Item>
+            <Navbar.Item>Subscription</Navbar.Item>
+          </Navbar.Items>
+          <Avatar>
+            <Avatar.Fallback>AD</Avatar.Fallback>
+          </Avatar>
         </Navbar>
       }
       Sidebar={
         <Sidebar>
+          <Sidebar.Header>
+            <Sidebar.Logo>Askides</Sidebar.Logo>
+          </Sidebar.Header>
           <Sidebar.Group>
             <Sidebar.GroupTitle>Informations</Sidebar.GroupTitle>
             <Sidebar.GroupItems>
@@ -79,82 +108,35 @@ export const Full: Story = {
         </Sidebar>
       }
     >
-      <Page>
-        <Page.Header>
-          <Page.Title>Dashboard</Page.Title>
-          <Page.Description>
-            Welcome to your dashboard. Here you can find all the information you
-            need.
-          </Page.Description>
-        </Page.Header>
-        <Page.Content>
-          <Table className="border border-zinc-100">
-            <Table.Caption>A list of your recent invoices.</Table.Caption>
-            <Table.Header>
-              <Table.Row>
-                <Table.Head className="w-[100px]">Invoice</Table.Head>
-                <Table.Head>Status</Table.Head>
-                <Table.Head>Method</Table.Head>
-                <Table.Head className="text-right">Amount</Table.Head>
-              </Table.Row>
-            </Table.Header>
-            <Table.Body>
-              <Table.Row>
-                <Table.Cell className="font-medium">INV001</Table.Cell>
-                <Table.Cell>Paid</Table.Cell>
-                <Table.Cell>Credit Card</Table.Cell>
-                <Table.Cell className="text-right">
-                  <Button mass="sm" art="ni">
-                    Add Invoice
-                  </Button>
-                </Table.Cell>
-              </Table.Row>
-              <Table.Row>
-                <Table.Cell className="font-medium">INV002</Table.Cell>
-                <Table.Cell>Paid</Table.Cell>
-                <Table.Cell>Paypal</Table.Cell>
-                <Table.Cell className="text-right">$150.00</Table.Cell>
-              </Table.Row>
-              <Table.Row>
-                <Table.Cell className="font-medium">INV003</Table.Cell>
-                <Table.Cell>Paid</Table.Cell>
-                <Table.Cell>Credit Card</Table.Cell>
-                <Table.Cell className="text-right">$350.00</Table.Cell>
-              </Table.Row>
-              <Table.Row>
-                <Table.Cell className="font-medium">INV004</Table.Cell>
-                <Table.Cell>Paid</Table.Cell>
-                <Table.Cell>Paypal</Table.Cell>
-                <Table.Cell className="text-right">$450.00</Table.Cell>
-              </Table.Row>
-            </Table.Body>
-          </Table>
-        </Page.Content>
-      </Page>
+      {children}
     </Shell>
   ),
 };
 
 export const JustNavbar: Story = {
-  render: (args) => (
+  render: ({ children, ...args }) => (
     <Shell
       {...args}
       Navbar={
-        <Navbar logo="Example">
-          <Navbar.Item>Item 1</Navbar.Item>
-          <Navbar.Item>Item 2</Navbar.Item>
-          <Navbar.Item>Item 3</Navbar.Item>
-          <Navbar.Item>Item 3</Navbar.Item>
+        <Navbar>
+          <Navbar.Logo>Statistics</Navbar.Logo>
+          <Navbar.Items className="ml-auto">
+            <Navbar.Item>Settings</Navbar.Item>
+            <Navbar.Item>Subscription</Navbar.Item>
+          </Navbar.Items>
+          <Avatar>
+            <Avatar.Fallback>AD</Avatar.Fallback>
+          </Avatar>
         </Navbar>
       }
     >
-      <div className="p-6">Content</div>
+      {children}
     </Shell>
   ),
 };
 
 export const JustSidebar: Story = {
-  render: (args) => (
+  render: ({ children, ...args }) => (
     <Shell
       {...args}
       Sidebar={
@@ -195,16 +177,7 @@ export const JustSidebar: Story = {
         </Sidebar>
       }
     >
-      <Page>
-        <Page.Header>
-          <Page.Title>Dashboard</Page.Title>
-          <Page.Description>
-            Welcome to your dashboard. Here you can find all the information you
-            need.
-          </Page.Description>
-        </Page.Header>
-        <Page.Content>Hello</Page.Content>
-      </Page>
+      {children}
     </Shell>
   ),
 };

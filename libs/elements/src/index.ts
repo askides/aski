@@ -8,3 +8,5 @@ export * from './elements/Sidebar';
 export * from './elements/Label';
 export * from './elements/Page';
 export * from './elements/Table';
+export * from './elements/Pattern';
+export * from './elements/Avatar';
