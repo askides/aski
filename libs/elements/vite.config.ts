@@ -13,7 +13,12 @@ export default defineConfig({
       fileName: (format) => `main.${format}.js`,
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'react/jsx-runtime'],
+      external: [
+        'react',
+        'react-dom',
+        'react/jsx-runtime',
+        'tailwind-variants',
+      ],
     },
     minify: true,
     sourcemap: false,
