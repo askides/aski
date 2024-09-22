@@ -11,7 +11,6 @@ import {
 } from '@askides/elements';
 import type { Meta, StoryObj } from '@storybook/react';
 import {
-  Car,
   ChartNoAxesCombined,
   FileWarning,
   LayoutDashboard,

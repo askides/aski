@@ -1,3 +1,3 @@
 # @askides/elements
 
-Readme in progress.
+A collection of UI components to build web apps.

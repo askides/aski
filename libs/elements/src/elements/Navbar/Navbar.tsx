@@ -6,7 +6,6 @@ export interface ShellProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 const { header, logo, nav, items, item } = styles();
 
-// Navbar
 export interface NavbarProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 const NavbarBase = forwardRef<HTMLDivElement, NavbarProps>(
