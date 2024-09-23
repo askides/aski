@@ -4,7 +4,7 @@ Personal suite of tools for creating beautiful web apps ✨
 
 ## What's Inside?
 
-Currently the monorepo contains two projects:
+This repo aim to be a collection of tools from components to utilities to help you build web apps effortlessly. Currently the monorepo contains two projects:
 
 - [Elements](./libs/elements/README.md): A collection of React UI components to build web apps.
 - [CLI](./packages/cli/README.md): A CLI tool to add elements to your apps effortlessly.
