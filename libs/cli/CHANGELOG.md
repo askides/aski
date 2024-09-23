@@ -1,5 +1,11 @@
 # @askides/cli
 
+## 0.0.5
+
+### Patch Changes
+
+- [`d175f52`](https://github.com/askides/aski/commit/d175f529a3b64bfac019ab6e2a06ead54c6c0195) Thanks [@askides](https://github.com/askides)! - ddf
+
 ## 0.0.4
 
 ### Patch Changes
