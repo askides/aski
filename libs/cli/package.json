@@ -28,6 +28,9 @@
     }
   },
   "main": "src/index.js",
+  "bin": {
+    "askides": "./dist/index.es.js"
+  },
   "scripts": {
     "dev": "tsx src/index.ts",
     "build": "vite build",
