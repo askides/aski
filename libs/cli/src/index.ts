@@ -7,15 +7,15 @@ import { initialize } from './commands/initialize';
 const prog = sade('aski');
 
 prog
-  .command('add <name>')
+  .command('add:element <name>')
   .describe('Add an element to your app.')
-  .example('add Button')
+  .example('add element Button')
   .action(addElement);
 
 prog
   .command('initialize')
   .alias('init')
-  .describe('Initialize config file for askides/elements.')
+  .describe('Initialize an .askides.json config file.')
   .action(initialize);
 
 prog.parse(process.argv);
