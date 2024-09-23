@@ -3,12 +3,12 @@
   "private": true,
   "scripts": {
     "build": "turbo build",
-    "dev": "turbo dev",
-    "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "chgset": "pnpm chgset:run && pnpm chgset:version",
     "chgset:run": "changeset",
     "chgset:version": "changeset version",
-    "chgset": "pnpm chgset:run && pnpm chgset:version",
+    "dev": "turbo dev",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "lint": "turbo lint",
     "release": "changeset publish"
   },
   "devDependencies": {
@@ -18,6 +18,7 @@
     "turbo": "^2.1.2",
     "typescript": "^5.4.5"
   },
+  "packageManager": "pnpm@8.15.6",
   "engines": {
     "node": ">=18"
   }
