@@ -1,12 +1,12 @@
-import { Avatar } from 'Elements/Avatar';
-import { Button } from 'Elements/Button';
-import { Card } from 'Elements/Card';
-import { Navbar } from 'Elements/Navbar';
-import { Page } from 'Elements/Page';
-import { Pattern } from 'Elements/Pattern';
-import { Shell } from 'Elements/Shell';
-import { Sidebar } from 'Elements/Sidebar';
-import { Table } from 'Elements/Table';
+import { Avatar } from '~elements/Avatar';
+import { Button } from '~elements/Button';
+import { Card } from '~elements/Card';
+import { Navbar } from '~elements/Navbar';
+import { Page } from '~elements/Page';
+import { Pattern } from '~elements/Pattern';
+import { Shell } from '~elements/Shell';
+import { Sidebar } from '~elements/Sidebar';
+import { Table } from '~elements/Table';
 import {
   ChartNoAxesCombined,
   FileWarning,
