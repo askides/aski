@@ -6,9 +6,10 @@
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "changeset": "changeset",
-    "changeset:version": "changeset version",
-    "changeset:publish": "changeset publish"
+    "chgset:run": "changeset",
+    "chgset:version": "changeset version",
+    "chgset": "pnpm chgset:run && pnpm chgset:version",
+    "release": "changeset publish"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.5.0",
