@@ -29,7 +29,7 @@
   },
   "main": "src/index.js",
   "bin": {
-    "askides": "./dist/index.es.js"
+    "@askides/cli": "./dist/index.es.js"
   },
   "scripts": {
     "dev": "tsx src/index.ts",
