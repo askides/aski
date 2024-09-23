@@ -2,7 +2,7 @@
 
 Personal suite of tools for creating beautiful web apps ✨
 
-# Here's a 40 second demo video!
+## Here's a 40 second demo video!
 
 https://github.com/user-attachments/assets/38f2041b-e02b-4fc3-b6b0-c35c89a1dfae
 
