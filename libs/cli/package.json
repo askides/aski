@@ -39,12 +39,8 @@
   "dependencies": {
     "@octokit/openapi-types": "^22.2.0",
     "@octokit/rest": "^21.0.2",
-    "@radix-ui/react-avatar": "^1.1.0",
-    "@radix-ui/react-slot": "^1.1.0",
-    "lucide-react": "^0.441.0",
     "package-manager-detector": "^0.2.0",
-    "sade": "^1.8.1",
-    "tailwind-variants": "^0.2.1"
+    "sade": "^1.8.1"
   },
   "devDependencies": {
     "@types/node": "^22.5.5",
