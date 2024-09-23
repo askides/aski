@@ -1,5 +1,11 @@
 # @askides/cli
 
+## 0.0.3
+
+### Patch Changes
+
+- 468ac25: Change bin
+
 ## 0.0.2
 
 ### Patch Changes
