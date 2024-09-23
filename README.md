@@ -2,6 +2,10 @@
 
 Personal suite of tools for creating beautiful web apps ✨
 
+# Here's a 40 second demo video!
+
+https://github.com/user-attachments/assets/38f2041b-e02b-4fc3-b6b0-c35c89a1dfae
+
 ## What's inside?
 
 This repo aim to be a collection of tools from components to utilities to help you build web apps effortlessly. Currently the monorepo contains two projects:
