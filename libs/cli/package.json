@@ -1,9 +1,7 @@
 {
   "name": "@askides/cli",
-  "description": "Command line interface for Aski.",
   "version": "0.0.0",
-  "license": "MIT",
-  "sideEffects": false,
+  "description": "Command line interface for Aski.",
   "keywords": [
     "cli",
     "askides",
@@ -13,33 +11,30 @@
   "bugs": {
     "url": "https://github.com/askides/aski/issues"
   },
-  "author": "Renato Pozzi <askides@proton.me> (https://askides.com)",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/askides/aski.git"
   },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
+  "license": "MIT",
+  "author": "Renato Pozzi <askides@proton.me> (https://askides.com)",
+  "sideEffects": false,
   "type": "module",
-  "files": [
-    "dist"
-  ],
-  "module": "./dist/index.es.js",
   "exports": {
     ".": {
       "import": "./dist/index.es.js"
     }
   },
   "main": "src/index.js",
+  "module": "./dist/index.es.js",
   "bin": {
     "@askides/cli": "./dist/index.es.js"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "dev": "tsx src/index.ts",
     "build": "vite build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "tsx src/index.ts"
   },
   "dependencies": {
     "@octokit/openapi-types": "^22.2.0",

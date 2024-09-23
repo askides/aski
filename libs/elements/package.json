@@ -1,42 +1,39 @@
 {
   "name": "@askides/elements",
-  "description": "A collection of UI components to build web apps.",
   "version": "0.0.0",
   "private": true,
-  "license": "MIT",
+  "description": "A collection of UI components to build web apps.",
   "keywords": [
-    "react",
-    "ui",
-    "components",
-    "design",
-    "system",
+    "askides",
+    "elements",
     "tailwindcss"
   ],
-  "sideEffects": false,
   "homepage": "https://github.com/askides/aski",
   "bugs": {
     "url": "https://github.com/askides/aski/issues"
   },
-  "author": "Renato Pozzi <askides@proton.me> (https://askides.com)",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/askides/aski.git"
   },
+  "license": "MIT",
+  "author": "Renato Pozzi <askides@proton.me> (https://askides.com)",
+  "sideEffects": false,
   "type": "module",
-  "files": [
-    "dist"
-  ],
-  "module": "./dist/main.es.js",
   "exports": {
     ".": {
       "import": "./dist/main.es.js",
       "types": "./dist/main.es.d.ts"
     }
   },
+  "module": "./dist/main.es.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "dev": "vite build --watch",
     "build": "vite build",
-    "deps:create": "tsx ./src/invokable/deps.ts"
+    "deps:create": "tsx ./src/invokable/deps.ts",
+    "dev": "vite build --watch"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.0",
