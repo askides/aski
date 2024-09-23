@@ -1,8 +1,9 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@3.0.3/schema.json",
   "changelog": false,
-  "commit": false,
+  "commit": ["../scripts/commit.js", { "customOption": true }],
   "access": "public",
   "baseBranch": "main",
-  "updateInternalDependencies": "patch"
+  "updateInternalDependencies": "patch",
+  "ignore": ["docs"]
 }
