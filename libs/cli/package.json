@@ -13,6 +13,10 @@
     "type": "git",
     "url": "git+https://github.com/askides/aski.git"
   },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "type": "module",
   "files": [
     "dist"

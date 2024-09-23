@@ -2,6 +2,7 @@
   "name": "@askides/elements",
   "description": "A collection of UI components to build web apps.",
   "version": "0.0.2",
+  "private": true,
   "license": "MIT",
   "keywords": [
     "react",
