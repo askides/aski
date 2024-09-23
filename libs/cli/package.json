@@ -39,12 +39,10 @@
   "dependencies": {
     "@octokit/openapi-types": "^22.2.0",
     "@octokit/rest": "^21.0.2",
-    "consola": "^3.2.3",
     "sade": "^1.8.1"
   },
   "devDependencies": {
     "@types/node": "^22.5.5",
-    "rollup-plugin-node-polyfills": "^0.2.1",
     "tsx": "^4.19.1",
     "vite": "^5.4.1"
   }

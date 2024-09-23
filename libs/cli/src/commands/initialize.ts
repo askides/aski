@@ -1,4 +1,3 @@
-import { consola } from 'consola';
 import { writeFile } from 'node:fs/promises';
 import {
   getConfig,
@@ -7,7 +6,7 @@ import {
 } from '../utils/getPackageJsonPath';
 
 export async function initialize() {
-  consola.start(`Initializing config file for Elements...`);
+  console.log(`Initializing config file for Elements...`);
 
   const config = await getConfig();
 
@@ -18,5 +17,5 @@ export async function initialize() {
   // Create the config file
   await writeFile(getConfigPath(), JSON.stringify(getDefaultConfig(), null, 2));
 
-  consola.success('Config file created at ->', getConfigPath());
+  console.log('Config file created at ->', getConfigPath());
 }

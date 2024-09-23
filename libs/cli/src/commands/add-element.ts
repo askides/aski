@@ -1,9 +1,8 @@
 import { Octokit } from '@octokit/rest';
-import { consola } from 'consola';
+import { exec } from 'node:child_process';
 import { createWriteStream } from 'node:fs';
 import { mkdir, readFile } from 'node:fs/promises';
 import { get } from 'node:https';
-import { exec } from 'node:child_process';
 import { dirname, join } from 'node:path';
 import { pipeline } from 'node:stream';
 import { promisify } from 'node:util';
@@ -44,12 +43,12 @@ async function downloadFile(
 export async function addElement(name: string) {
   const client = new Octokit();
 
-  consola.start(`Adding element ${name}...`);
+  console.log(`Adding element ${name}...`);
 
   const config = await getConfig();
 
   if (!config) {
-    consola.warn(
+    console.warn(
       'Config file not found. Run `npx askides init` to create one.'
     );
 
@@ -85,7 +84,7 @@ export async function addElement(name: string) {
   );
 
   // Install dependencies
-  consola.info(`Installing dependencies for ${name}...`);
+  console.info(`Installing dependencies for ${name}...`);
 
   const depsToInstall = Object.entries(dependencies)
     .map(([packageName, version]) => `${packageName}@${version}`)
@@ -96,14 +95,14 @@ export async function addElement(name: string) {
   // Handle the completion of the process
   install.on('close', (code) => {
     if (code !== 0) {
-      consola.error(`Failed to install dependencies for ${name}`);
+      console.error(`Failed to install dependencies for ${name}`);
     }
 
-    consola.success(`Element ${name} added!`);
+    console.log(`Element ${name} added!`);
   });
 
   // Handle errors during execution
   install.on('error', (error) => {
-    consola.error(`Error: ${error.message}`);
+    console.error(`Error: ${error.message}`);
   });
 }
