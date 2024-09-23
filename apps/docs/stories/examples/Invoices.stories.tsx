@@ -88,7 +88,6 @@ export const Example: Story = {
               </Card.Header>
               <Card.Body className="-mx-6">
                 <Table>
-                  {/* <Table.Caption>A list of your recent invoices.</Table.Caption> */}
                   <Table.Header>
                     <Table.Row className="hover:bg-transparent">
                       <Table.Head className="w-[100px] px-6">
