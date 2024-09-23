@@ -1,3 +1,6 @@
 {
-  "@radix-ui/react-avatar": "^1.1.0"
+  "dependencies": {
+    "@radix-ui/react-avatar": "^1.1.0"
+  },
+  "elements": []
 }
