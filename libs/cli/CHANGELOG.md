@@ -1,5 +1,11 @@
 # @askides/cli
 
+## 0.0.2
+
+### Patch Changes
+
+- 2eb1b4e: Add binary support
+
 ## 0.0.1
 
 ### Patch Changes
