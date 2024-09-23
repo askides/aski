@@ -1,12 +1,12 @@
 import { Octokit } from '@octokit/rest';
 import { consola } from 'consola';
-import { createWriteStream } from 'fs';
-import { mkdir, readFile } from 'fs/promises';
-import { get } from 'https';
+import { createWriteStream } from 'node:fs';
+import { mkdir, readFile } from 'node:fs/promises';
+import { get } from 'node:https';
 import { exec } from 'node:child_process';
 import { dirname, join } from 'node:path';
-import { pipeline } from 'stream';
-import { promisify } from 'util';
+import { pipeline } from 'node:stream';
+import { promisify } from 'node:util';
 import { getConfig } from '../utils/getPackageJsonPath';
 
 const streamPipeline = promisify(pipeline);

@@ -1,5 +1,5 @@
 import { consola } from 'consola';
-import { writeFile } from 'fs/promises';
+import { writeFile } from 'node:fs/promises';
 import {
   getConfig,
   getConfigPath,

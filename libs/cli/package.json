@@ -6,6 +6,7 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "tsx src/index.ts",
+    "build": "vite build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,12 +15,13 @@
   "dependencies": {
     "@octokit/openapi-types": "^22.2.0",
     "@octokit/rest": "^21.0.2",
-    "@radix-ui/react-slot": "^1.1.0",
     "consola": "^3.2.3",
     "sade": "^1.8.1"
   },
   "devDependencies": {
     "@types/node": "^22.5.5",
-    "tsx": "^4.19.1"
+    "rollup-plugin-node-polyfills": "^0.2.1",
+    "tsx": "^4.19.1",
+    "vite": "^5.4.1"
   }
 }
