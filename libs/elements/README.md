@@ -16,9 +16,9 @@ There's a demo available for the components in the Storybook, which you can run 
 
 To use Elements into your project, you need these dependencies:
 
-- [https://tailwindcss.com/](TailwindCSS)
-- [https://www.tailwind-variants.org/](Tailwind Variants)
-- An Icon Library (like [https://lucide.dev/](Lucide)) - Optional
+- [TailwindCSS](https://tailwindcss.com/)
+- [Tailwind Variants](https://www.tailwind-variants.org/)
+- An Icon Library (i recommend [Lucide](https://lucide.dev/) - Optional
 
 > Note, all the components are build with the out-of-the-box TailwindCSS classes, there's nothing custom in the components.
 
