@@ -15,7 +15,7 @@ import {
   Users,
 } from 'lucide-react';
 
-export function Invoices() {
+export function InvoicesExample() {
   return (
     <Shell
       Navbar={

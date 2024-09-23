@@ -20,7 +20,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      Elements: resolve(__dirname, 'src', 'elements'),
+      '~elements': resolve(__dirname, 'src', 'elements'),
     },
   },
 });

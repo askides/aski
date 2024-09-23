@@ -10,3 +10,6 @@ export * from './elements/Page';
 export * from './elements/Table';
 export * from './elements/Pattern';
 export * from './elements/Avatar';
+
+// Examples
+export * from './examples/Invoices';

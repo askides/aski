@@ -34,7 +34,7 @@
   ],
   "scripts": {
     "build": "vite build",
-    "dev": "tsx src/index.ts"
+    "run": "tsx src/index.ts"
   },
   "dependencies": {
     "@octokit/openapi-types": "^22.2.0",
