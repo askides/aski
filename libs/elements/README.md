@@ -14,18 +14,51 @@ There's a demo available for the components in the Storybook, which you can run 
 
 ## Installation and Usage
 
-To install Elements, there are two options available.
+To use Elements into your project, you need these dependencies:
 
-### Option 1: Source Code
+- [https://tailwindcss.com/](TailwindCSS)
+- [https://www.tailwind-variants.org/](Tailwind Variants)
+- An Icon Library (like [https://lucide.dev/](Lucide)) - Optional
 
-This option is recommended if you want to keep the full flexibility for your components or if you want to use them in a project that doesn't use npm.
+> Note, all the components are build with the out-of-the-box TailwindCSS classes, there's nothing custom in the components.
 
-1. Install the package from npm:
+### Option 1: Using the CLI
+
+That's the fastest way to get started with Elements. The CLI will help you to add the components to your project effortlessly.
+
+1. Inside an existing project, run the following command:
 
 ```bash
-npm install @askides/elements
+npx @askides/cli init
 ```
 
-2. Copy the source code to your project.
+2. The CLI will create a `.askides.json` file in the root of your project. This file will contain the configuration for the components you will add.
 
-You can find all the source code in the `libs/elements` folder. Copy the components you need to your project.
+3. Run the following command to add the desired element to your project:
+
+```bash
+npx @askides/cli add Button
+```
+
+4. The CLI will take care of adding the component to your project and install the necessary dependencies.
+
+### Option 2: Copying the Components
+
+If you prefer to copy the components manually, you can do so by simply browsing the `libs/elements` folder and copying the desired component to your project.
+
+## How Are The Components Structured?
+
+All the components are in their specific directory and all the files are named in a way that you can easily understand what they do, let's take the `Button` component as an example:
+
+```
+Button.tsx -> Used to define the component.
+Button.styles.tsx -> Used to style the component.
+Button.dependencies.json -> Used to list the dependencies needed for the component.
+index.ts -> Used to export the component.
+```
+
+For complex components the dot notation is used to separate the different parts of the component, check the `Card` component for an example.
+
+## How To Contribute?
+
+If you want to contribute to Elements, you can do so by creating a PR with your changes. Currently the project is in its early stages, so any suggestion is welcome.
