@@ -15,7 +15,7 @@ prog
 prog
   .command('initialize')
   .alias('init')
-  .describe('Initialize an .askides.json config file.')
+  .describe('Initialize the .askides.json config file.')
   .action(initialize);
 
 prog.parse(process.argv);
