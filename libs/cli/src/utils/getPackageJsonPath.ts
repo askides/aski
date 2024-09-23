@@ -1,12 +1,13 @@
 import { existsSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 import { dirname, join, parse } from 'node:path';
+import { detect } from 'package-manager-detector/detect';
 
-export const getPackageJsonPath = (startDir = process.cwd()) => {
+export const getFilePath = (name: string, startDir = process.cwd()) => {
   let currentDir = startDir;
 
   while (currentDir !== parse(currentDir).root) {
-    const packageJsonPath = join(currentDir, 'package.json');
+    const packageJsonPath = join(currentDir, name);
 
     if (existsSync(packageJsonPath)) {
       return packageJsonPath;
@@ -16,20 +17,24 @@ export const getPackageJsonPath = (startDir = process.cwd()) => {
     currentDir = dirname(currentDir);
   }
 
-  throw new Error('No package.json found!');
+  throw new Error(`No ${name} found!`);
 };
 
 export const getRootDir = () => {
-  return dirname(getPackageJsonPath());
+  return dirname(getFilePath('package.json'));
+};
+
+export const getDependencyName = (dep: string) => {
+  const match = dep.match(/^(@?[^@]+)(?:@.+)?$/);
+  return match ? match[1] : dep;
 };
 
 export const getConfig = async () => {
   const configPath = join(getRootDir(), '.askides.json');
 
   if (existsSync(configPath)) {
-    return JSON.parse(await readFile(configPath, 'utf-8')) as Record<
-      string,
-      string
+    return JSON.parse(await readFile(configPath, 'utf-8')) as ReturnType<
+      typeof getDefaultConfig
     >;
   }
 
@@ -42,6 +47,19 @@ export const getConfigPath = () => {
 
 export const getDefaultConfig = () => {
   return {
-    dir: 'src/elements',
+    dirs: {
+      elements: 'src/elements',
+      examples: 'src/examples',
+    },
   };
+};
+
+export const getPackageManager = async () => {
+  const manager = await detect();
+
+  if (!manager) {
+    throw new Error('No package manager found!');
+  }
+
+  return manager;
 };

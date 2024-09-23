@@ -5,7 +5,7 @@ import {
   getDefaultConfig,
 } from '../utils/getPackageJsonPath';
 
-export async function initialize() {
+export async function init() {
   console.log(`Initializing config file for Elements...`);
 
   const config = await getConfig();

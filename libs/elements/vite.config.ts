@@ -13,9 +13,14 @@ export default defineConfig({
       fileName: (format) => `main.${format}.js`,
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'react/jsx-runtime'],
+      external: ['react', 'react-dom', 'react/jsx-runtime', 'lucide-react'],
     },
     minify: true,
     sourcemap: false,
+  },
+  resolve: {
+    alias: {
+      Elements: resolve(__dirname, 'src', 'elements'),
+    },
   },
 });
