@@ -16,6 +16,20 @@ import { resolveCommand } from 'package-manager-detector';
 
 const streamPipeline = promisify(pipeline);
 
+class Console {
+  constructor(private isVerbose = false) {}
+
+  log(...args: Parameters<typeof console.log>) {
+    console.log(...args);
+  }
+
+  debug(...args: Parameters<typeof console.log>) {
+    if (this.isVerbose) {
+      console.log(...args);
+    }
+  }
+}
+
 async function downloadFile(
   filePath: string,
   downloadUrl: string,
@@ -60,18 +74,25 @@ const getOutDir = (
   }
 };
 
-export async function add(folder: string, name: string) {
+export async function add(
+  folder: string,
+  name: string,
+  opts?: {
+    verbose: false;
+  }
+) {
   const client = new Octokit();
+  const console = new Console(opts?.verbose);
 
-  console.log(`Adding ${name} from ${folder}...`);
+  console.debug(`Adding ${name} from ${folder}...`);
 
   const pm = await getPackageManager();
 
   const config = await getConfig();
 
   if (!config) {
-    console.warn(
-      'Config file not found. Run `npx askides init` to create one.'
+    console.log(
+      'Config file not found. Run `npx @askides/cli init` to create one.'
     );
 
     return false;
@@ -108,7 +129,7 @@ export async function add(folder: string, name: string) {
   );
 
   // Install dependencies
-  console.info(`Installing dependencies for ${name}...`);
+  console.debug(`Installing dependencies for ${name}...`);
 
   const depsToInstall = Object.entries(dependencies).map(
     ([packageName, version]) => `${packageName}@${version}`
@@ -125,7 +146,7 @@ export async function add(folder: string, name: string) {
 
     if (depsInPkg.dependencies && depsInPkg.dependencies[depName]) {
       // Log the dependency as already installed.
-      console.log(`Dependency ${depName} already installed!`);
+      console.debug(`Dependency ${depName} already installed!`);
 
       // Remove the dependency from the list
       depsToInstall.splice(depsToInstall.indexOf(dep), 1);
@@ -142,12 +163,12 @@ export async function add(folder: string, name: string) {
 
     // Execute the command to install dependencies
     execSync(`${solved.command} ${solved.args.join(' ')}`, {
-      stdio: 'inherit',
+      stdio: opts?.verbose ? 'inherit' : 'ignore',
     });
   }
 
   // Handle the completion of the process
-  console.log(`Element ${name} added!\n`);
+  console.log(`Element ${name} added! ✨\n`);
 
   // Install elements
   for (const element of elements) {

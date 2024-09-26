@@ -8,6 +8,7 @@ const prog = sade('aski');
 
 prog
   .command('add <folder> <name>')
+  .option('--verbose', 'Enable verbose mode.')
   .describe('Add an element or an example to your app.')
   .example('add elements Button')
   .example('add examples Invoices')
