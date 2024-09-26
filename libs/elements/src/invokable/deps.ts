@@ -8,6 +8,30 @@ import Pkg from '../../package.json';
 // @ts-ignore
 const traverse = _traverse.default;
 
+const getModuleDeps = async (file: string) => {
+  const content = await readFile(path.join(process.cwd(), file), 'utf-8');
+
+  const ast = parse(content, {
+    sourceType: 'module',
+    plugins: ['jsx', 'typescript'],
+  });
+
+  const deps = new Set<string>();
+
+  traverse(ast, {
+    // @ts-ignore
+    ImportDeclaration({ node }) {
+      const importPath = node.source.value;
+
+      if (!importPath.startsWith('.') && !importPath.startsWith('/')) {
+        deps.add(importPath);
+      }
+    },
+  });
+
+  return Array.from(deps);
+};
+
 (async () => {
   // Get directory from arguments.
   const [, , ...args] = process.argv;
@@ -38,25 +62,13 @@ const traverse = _traverse.default;
 
   // Read the content of each file & extract the dependencies.
   for (const file of filesWithDirs) {
-    const content = await readFile(path.join(process.cwd(), file), 'utf-8');
+    const depsFromElement = await getModuleDeps(file);
+    const depsFromStyles = await getModuleDeps(
+      file.replace('.tsx', '.styles.ts'),
+    );
 
-    const ast = parse(content, {
-      sourceType: 'module',
-      plugins: ['jsx', 'typescript'],
-    });
-
-    const deps = new Set<string>();
-
-    traverse(ast, {
-      // @ts-ignore
-      ImportDeclaration({ node }) {
-        const importPath = node.source.value;
-
-        if (!importPath.startsWith('.') && !importPath.startsWith('/')) {
-          deps.add(importPath);
-        }
-      },
-    });
+    // Combine the dependencies from the element and the styles.
+    const deps = [...depsFromElement, ...depsFromStyles];
 
     // Obtain the currently installed version of the dependencies.
     const depsWithVersion = new Map<string, string>();
@@ -72,6 +84,11 @@ const traverse = _traverse.default;
       if (dep.startsWith('~elements/')) {
         depsInElements.add(dep.replace('~elements/', ''));
       }
+    }
+
+    // Skip if is not an element.
+    if (!file.endsWith('.tsx')) {
+      continue;
     }
 
     const name = file.split('/').pop();
