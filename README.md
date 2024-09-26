@@ -1,26 +1,67 @@
 # Aski
 
-Personal suite of tools for creating beautiful web apps ✨
+Suite of Copy & Paste TailwindCSS + React Components to build web apps effortlessly.
 
-## Here's a 40 second demo video!
+## Table of Contents
+
+- [Installation](#installation)
+- [Elements](#elements)
+- [Demo](#demo)
+- [Motivation](#motivation)
+- [Contributing](#contributing)
+
+## Installation
+
+Here's the quickest way to get started with Aski.
+
+### Install TailwindCSS
+
+You need to have TailwindCSS installed in your project. Follow the [official documentation](https://tailwindcss.com/docs/installation) to get started.
+
+### Initialize the CLI
+
+```bash
+npx @askides/cli init
+```
+
+This will install the CLI and create a new `.askides.json` file in your project root next to your `package.json` file.
+
+### Add an Element
+
+```bash
+npx @askides/cli add elements <element-name>
+```
+
+This command will add the desired element to your project and install the necessary dependencies for it.
+
+## Elements
+
+You can see all the available Element in the [Storybook](https://elements.askides.com/). All the elements present on the Storybook can be added to your project.
+
+```bash
+npx @askides/cli add elements Button
+```
+
+### Examples
+
+There's also a special section called `Examples`, where you can find UIs built using the Elements. You can install them as well using the CLI:
+
+```bash
+npx @askides/cli add examples <example-name>
+```
+
+## Demo
+
+Here's how starting a new project with Aski looks like:
 
 https://github.com/user-attachments/assets/38f2041b-e02b-4fc3-b6b0-c35c89a1dfae
 
-## What's inside?
-
-This repo aim to be a collection of tools from components to utilities to help you build web apps effortlessly. Currently the monorepo contains two projects:
-
-- [Elements](./libs/elements/README.md): A collection of React UI components to build web apps.
-- [CLI](./packages/cli/README.md): A CLI tool to add elements to your apps effortlessly.
-
-## Can i see a demo?
-
-Sure! You can check the [Storybook](https://elements.askides.com/) to see all the components in action.
-
 ## Motivation
 
-I love the idea behind what Shadcn's UI gives to the end user, and I wanted to create something similar to be used for all my projects as a learning experience. Obviously, this is not a copy-paste of Shadcn's UI, but it's inspired by it.
+I've been using Shadcn's UI for a while now, and I love the simplicity and ease of use it provides.
 
-## How to get started?
+This is my attempt to create a similar collection of components as a learning experience and with some personal touch.
 
-Have a look at the [Elements](./libs/elements/README.md) and [CLI](./packages/cli/README.md) documentation to get started.
+## Contributing
+
+Right now, Aski is in its early stages, and I'm still figuring out how to structure the components and the CLI. If you have any suggestions or want to contribute, feel free to open an issue or a PR.
