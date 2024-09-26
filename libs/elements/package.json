@@ -40,7 +40,7 @@
     "@radix-ui/react-label": "^2.1.0",
     "@radix-ui/react-slot": "^1.1.0",
     "lucide-react": "^0.441.0",
-    "tailwind-variants": ">=0.2.0"
+    "tailwind-variants": "0.2.0"
   },
   "devDependencies": {
     "@babel/parser": "^7.25.6",
