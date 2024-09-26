@@ -1,7 +1,5 @@
 import { existsSync, readFileSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
-import { get } from 'node:http';
-import { version } from 'node:os';
 import { dirname, join, parse } from 'node:path';
 import { detect } from 'package-manager-detector/detect';
 
