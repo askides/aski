@@ -86,11 +86,6 @@ const getModuleDeps = async (file: string) => {
       }
     }
 
-    // Skip if is not an element.
-    if (!file.endsWith('.tsx')) {
-      continue;
-    }
-
     const name = file.split('/').pop();
     const dependencies = Object.fromEntries(depsWithVersion);
     const elements = Array.from(depsInElements);
