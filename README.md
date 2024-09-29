@@ -2,6 +2,8 @@
 
 Suite of Copy & Paste TailwindCSS + React Components to build web apps effortlessly.
 
+[![Aski](./assets/welcome.jpg)](https://elements.askides.com)
+
 ## Table of Contents
 
 - [Installation](#installation)

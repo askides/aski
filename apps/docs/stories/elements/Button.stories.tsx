@@ -18,7 +18,7 @@ const opts = {
     },
     mass: {
       control: 'select',
-      options: ['sm', 'md', 'lg'],
+      options: ['xs', 'sm', 'md', 'lg'],
       description: 'The mass of the button',
     },
   },
