@@ -7,6 +7,7 @@ export const styles = tv({
       ichi: 'border-transparent bg-emerald-500 text-white shadow-sm hover:bg-emerald-600 active:shadow-inner',
       ni: 'border-gray-200 bg-white text-zinc-800 shadow-sm hover:bg-zinc-100 active:shadow-inner',
       san: 'border-transparent bg-transparent text-zinc-800 shadow-none hover:bg-zinc-100',
+      shi: 'bg-gradient-to-bl from-purple-500 via-indigo-500 to-blue-500 text-white',
     },
     mass: {
       xs: 'h-6 px-2 text-xs rounded-md',
