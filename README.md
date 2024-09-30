@@ -2,13 +2,12 @@
 
 Suite of Copy & Paste TailwindCSS + React Components to build web apps effortlessly.
 
-![A screenshot of the Aski Elements](./assets/welcome.jpg)
+![A screenshot of the Aski Elements](./assets/welcome.png)
 
 ## Table of Contents
 
 - [Installation](#installation)
 - [Elements](#elements)
-- [Demo](#demo)
 - [Motivation](#motivation)
 - [Contributing](#contributing)
 
@@ -38,11 +37,22 @@ This command will add the desired element to your project and install the necess
 
 ## Elements
 
-You can see all the available Element in the [Storybook](https://elements.askides.com/). All the elements present on the Storybook can be added to your project.
+The element list is still in development, but a few elements are already available.
 
-```bash
-npx @askides/cli add elements Button
-```
+- Shell
+- Navbar
+- Sidebar
+- Pattern
+- Page
+- Button
+- Input
+- Card
+- Table
+- Label
+- Avatar
+- Badge
+
+You can see all the available Elements in the [Storybook](https://elements.askides.com/).
 
 ### Examples
 
@@ -51,12 +61,6 @@ There's also a special section called `Examples`, where you can find UIs built u
 ```bash
 npx @askides/cli add examples <example-name>
 ```
-
-## Demo
-
-Here's how starting a new project with Aski looks like:
-
-https://github.com/user-attachments/assets/38f2041b-e02b-4fc3-b6b0-c35c89a1dfae
 
 ## Motivation
 
