@@ -1,7 +1,3 @@
-# Aski
-
-Suite of Copy & Paste TailwindCSS + React Components to build web apps effortlessly.
-
 ![A screenshot of the Aski Elements](./assets/welcome.png)
 
 ## Table of Contents
