@@ -9,6 +9,13 @@ import Pkg from '../../package.json';
 const traverse = _traverse.default;
 
 const getModuleDeps = async (file: string) => {
+  // If the file does not exist, return an empty array.
+  try {
+    await readFile(path.join(process.cwd(), file), 'utf-8');
+  } catch {
+    return [];
+  }
+
   const content = await readFile(path.join(process.cwd(), file), 'utf-8');
 
   const ast = parse(content, {

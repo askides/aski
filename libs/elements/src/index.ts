@@ -16,3 +16,6 @@ export * from './elements/Select';
 
 // Examples
 export * from './examples/Invoices';
+
+// Chunks
+export * from './chunks/SignUpCard';

@@ -4,6 +4,7 @@
   },
   "elements": [
     "Avatar",
+    "Badge",
     "Button",
     "Card",
     "Navbar",
