@@ -1,7 +1,7 @@
 import { tv } from 'tailwind-variants';
 
 export const styles = tv({
-  base: 'inline-flex items-center gap-x-2 font-medium border focus:outline-none disabled:opacity-50 disabled:pointer-events-none focus:ring-2 focus:ring-offset-2',
+  base: 'inline-flex items-center gap-x-2 justify-center font-medium border focus:outline-none disabled:opacity-50 disabled:pointer-events-none focus:ring-2 focus:ring-offset-2',
   variants: {
     art: {
       ichi: 'border-transparent bg-emerald-500 text-white shadow-sm hover:bg-emerald-600 active:shadow-inner',
