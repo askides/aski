@@ -11,6 +11,8 @@ export * from './elements/Table';
 export * from './elements/Pattern';
 export * from './elements/Avatar';
 export * from './elements/Badge';
+export * from './elements/Textarea';
+export * from './elements/Select';
 
 // Examples
 export * from './examples/Invoices';

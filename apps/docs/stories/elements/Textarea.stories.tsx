@@ -1,32 +1,32 @@
-import { Button, Input, Label } from '@askides/elements';
+import { Button, Textarea, Label } from '@askides/elements';
 import type { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
 
 const opts = {
-  title: 'Elements/Input',
-  component: Input,
+  title: 'Elements/Textarea',
+  component: Textarea,
   parameters: { layout: 'centered' },
   args: {
     placeholder: 'Your favorite color?',
   },
-} satisfies Meta<typeof Input>;
+} satisfies Meta<typeof Textarea>;
 
 type Story = StoryObj<typeof opts>;
 
 export const Basic: Story = {
   render: (props) => (
     <div className="w-96">
-      <Input {...props} />
+      <Textarea {...props} />
     </div>
   ),
 };
 
 export const WithLabel: Story = {
-  render: (args) => (
+  render: (props) => (
     <div className="w-96">
       <div className="space-y-1">
         <Label htmlFor="color">Color</Label>
-        <Input id="color" {...args} />
+        <Textarea id="color" {...props} />
       </div>
     </div>
   ),

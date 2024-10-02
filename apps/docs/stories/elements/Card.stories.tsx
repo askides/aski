@@ -1,4 +1,4 @@
-import { Button, Card, Input, Label } from '@askides/elements';
+import { Button, Card, Input, Label, Select } from '@askides/elements';
 import type { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
 
@@ -63,7 +63,11 @@ export const WithForm: Story = {
           </div>
           <div className="space-y-1">
             <Label htmlFor="food">Best Food?</Label>
-            <Input id="food" placeholder="Sushi" />
+            <Select id="food">
+              <option value="sushi">Sushi</option>
+              <option value="ramen">Ramen</option>
+              <option value="tempura">Tempura</option>
+            </Select>
           </div>
         </div>
       </Card.Body>

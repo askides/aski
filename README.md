@@ -15,6 +15,8 @@ Here's the quickest way to get started with Aski.
 
 You need to have TailwindCSS installed in your project. Follow the [official documentation](https://tailwindcss.com/docs/installation) to get started.
 
+> Be sure to install the `@tailwindcss/forms` plugin as well.
+
 ### Initialize the CLI
 
 ```bash
