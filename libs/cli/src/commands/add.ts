@@ -132,9 +132,6 @@ export async function add(
     )
   );
 
-  // Delete the dependencies file
-  await unlink(join(process.cwd(), outDir, name, `.dependencies.json`));
-
   // Install dependencies
   console.debug('Dependencies found:', { dependencies, elements });
   console.debug(`Installing dependencies for ${name}...`);
@@ -174,6 +171,9 @@ export async function add(
       stdio: opts?.verbose ? 'inherit' : 'ignore',
     });
   }
+
+  // Delete the dependencies file
+  await unlink(join(process.cwd(), outDir, name, `.dependencies.json`));
 
   // Install elements
   for (const element of elements) {
