@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "lucide-react": "^0.441.0"
+  },
+  "elements": [
+    "Avatar",
+    "Badge",
+    "Button",
+    "Card",
+    "Navbar",
+    "Page",
+    "Pattern",
+    "Shell",
+    "Sidebar",
+    "Table"
+  ]
+}
