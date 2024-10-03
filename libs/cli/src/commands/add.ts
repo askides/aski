@@ -79,13 +79,16 @@ export async function add(
   folder: string,
   name: string,
   opts?: {
-    verbose: false;
+    verbose?: boolean;
+    isSubCommand?: boolean;
   }
 ) {
   const client = new Octokit();
   const console = new Console(opts?.verbose);
 
-  console.debug(`Adding ${name} from ${folder}...`);
+  if (!opts?.isSubCommand) {
+    console.log(`✨ Adding ${name} and its deps...`);
+  }
 
   const pm = await getPackageManager();
 
@@ -171,14 +174,16 @@ export async function add(
     });
   }
 
-  // Handle the completion of the process
-  console.log(`Element ${name} added! ✨\n`);
-
   // Install elements
   for (const element of elements) {
     // Skip if the element already exists.
     if (!existsSync(join(config.dirs.elements, element))) {
-      await add('elements', element);
+      await add('elements', element, { isSubCommand: true });
     }
+  }
+
+  // Handle the completion of the process
+  if (!opts?.isSubCommand) {
+    console.log(`✨ Element ${name} added!`);
   }
 }

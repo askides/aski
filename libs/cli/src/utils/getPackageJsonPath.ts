@@ -1,7 +1,8 @@
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 import { dirname, join, parse } from 'node:path';
 import { detect } from 'package-manager-detector/detect';
+import pkg from '../../package.json';
 
 export const getFilePath = (name: string, startDir = process.cwd()) => {
   let currentDir = startDir;
@@ -46,13 +47,12 @@ export const getConfigPath = () => {
 };
 
 export const getDefaultConfig = () => {
-  const pkg = readFileSync(getFilePath('package.json'), 'utf-8');
+  // const pkg = readFileSync(getFilePath('package.json'), 'utf-8');
 
   return {
-    version: JSON.parse(pkg).version,
+    version: pkg.version,
     dirs: {
       elements: 'src/elements',
-      examples: 'src/examples',
       chunks: 'src/chunks',
     },
   };
