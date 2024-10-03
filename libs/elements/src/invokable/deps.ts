@@ -102,7 +102,7 @@ const getModuleDeps = async (file: string) => {
     console.log('Elements ->', elements);
 
     // Write a '.dependencies.json' file with the dependencies.
-    const depsPath = file.replace('.tsx', '.dependencies.json');
+    const depsPath = file.replace(name!, '.dependencies.json');
 
     await writeFile(
       depsPath,
