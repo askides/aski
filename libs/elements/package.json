@@ -33,6 +33,7 @@
   "scripts": {
     "build": "vite build",
     "deps:create": "tsx ./src/invokable/deps.ts",
+    "deps:clean": "find . -name \"*.dependencies.json\" -delete 2>/dev/null",
     "dev": "vite build --watch"
   },
   "dependencies": {
