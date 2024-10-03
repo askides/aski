@@ -136,6 +136,7 @@ export async function add(
   await unlink(join(process.cwd(), outDir, name, `.dependencies.json`));
 
   // Install dependencies
+  console.debug('Dependencies found:', { dependencies, elements });
   console.debug(`Installing dependencies for ${name}...`);
 
   const depsToInstall = Object.entries(dependencies).map(
