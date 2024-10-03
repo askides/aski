@@ -11,13 +11,13 @@
 
 Here's the quickest way to get started with Aski.
 
-### Install TailwindCSS
+### 1. Install TailwindCSS
 
 You need to have TailwindCSS installed in your project. Follow the [official documentation](https://tailwindcss.com/docs/installation) to get started.
 
 > Be sure to install the `@tailwindcss/forms` plugin as well.
 
-### Initialize the CLI
+### 2. Initialize the CLI
 
 ```bash
 npx @askides/cli init
@@ -25,13 +25,32 @@ npx @askides/cli init
 
 This will install the CLI and create a new `.askides.json` file in your project root next to your `package.json` file.
 
-### Add an Element
+### 3. Add an Element
 
 ```bash
 npx @askides/cli add elements <element-name>
 ```
 
 This command will add the desired element to your project and install the necessary dependencies for it.
+
+### 4. Set up the TS Paths
+
+Add the following to your `tsconfig.json` file:
+
+```json
+{
+  "compilerOptions": {
+    /* Paths */
+    "baseUrl": "./",
+    "paths": {
+      "~elements/*": ["src/elements/*"],
+      "~chunks/*": ["src/chunks/*"]
+    }
+  }
+}
+```
+
+This will allow you to import the elements using the `~elements` and `~chunks` paths.
 
 ## Elements
 
