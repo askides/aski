@@ -40,7 +40,6 @@ Add the following to your `tsconfig.json` file:
 ```json
 {
   "compilerOptions": {
-    /* Paths */
     "baseUrl": "./",
     "paths": {
       "~elements/*": ["src/elements/*"],
