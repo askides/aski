@@ -53,6 +53,7 @@ export const getDefaultConfig = () => {
     dirs: {
       elements: 'src/elements',
       examples: 'src/examples',
+      chunks: 'src/chunks',
     },
   };
 };
