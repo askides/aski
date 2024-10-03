@@ -68,8 +68,6 @@ const getOutDir = (
   switch (name) {
     case 'elements':
       return config!.dirs.elements;
-    case 'examples':
-      return config!.dirs.examples;
     case 'chunks':
       return config!.dirs.chunks;
     default:
