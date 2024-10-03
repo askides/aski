@@ -1,18 +1,18 @@
 import { Octokit } from '@octokit/rest';
-import { exec, execSync } from 'node:child_process';
+import { execSync } from 'node:child_process';
 import { createWriteStream, existsSync } from 'node:fs';
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, unlink } from 'node:fs/promises';
 import { get } from 'node:https';
 import { dirname, join } from 'node:path';
 import { pipeline } from 'node:stream';
 import { promisify } from 'node:util';
+import { resolveCommand } from 'package-manager-detector';
 import {
   getConfig,
   getDependencyName,
   getFilePath,
   getPackageManager,
 } from '../utils/getPackageJsonPath';
-import { resolveCommand } from 'package-manager-detector';
 
 const streamPipeline = promisify(pipeline);
 
@@ -123,10 +123,13 @@ export async function add(
   // Read the dependencies file and install them.
   const { dependencies, elements } = JSON.parse(
     await readFile(
-      join(process.cwd(), outDir, name, `${name}.dependencies.json`),
+      join(process.cwd(), outDir, name, `.dependencies.json`),
       'utf-8'
     )
   );
+
+  // Delete the dependencies file
+  await unlink(join(process.cwd(), outDir, name, `.dependencies.json`));
 
   // Install dependencies
   console.debug(`Installing dependencies for ${name}...`);
