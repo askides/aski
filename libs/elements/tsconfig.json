@@ -23,7 +23,8 @@
     /* Paths */
     "baseUrl": "./",
     "paths": {
-      "~elements/*": ["src/elements/*"]
+      "~elements/*": ["src/elements/*"],
+      "~chunks/*": ["src/chunks/*"]
     }
   },
   "include": ["src"]
