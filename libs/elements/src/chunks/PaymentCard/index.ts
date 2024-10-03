@@ -1,0 +1,1 @@
+export { PaymentCard } from './PaymentCard';

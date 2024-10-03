@@ -19,3 +19,4 @@ export * from './examples/Invoices';
 
 // Chunks
 export * from './chunks/SignUpCard';
+export * from './chunks/PaymentCard';
