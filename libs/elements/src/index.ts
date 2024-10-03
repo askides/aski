@@ -14,9 +14,7 @@ export * from './elements/Badge';
 export * from './elements/Textarea';
 export * from './elements/Select';
 
-// Examples
-export * from './examples/Invoices';
-
 // Chunks
+export * from './chunks/InvoicesPage';
 export * from './chunks/SignUpCard';
 export * from './chunks/PaymentCard';

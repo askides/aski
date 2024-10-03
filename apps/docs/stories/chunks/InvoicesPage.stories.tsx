@@ -1,9 +1,9 @@
-import { InvoicesExample } from '@askides/elements';
+import { InvoicesPage } from '@askides/elements';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const opts = {
-  title: 'Examples/Invoices',
-  component: InvoicesExample,
+  title: 'Chunks/InvoicesPage',
+  component: InvoicesPage,
   parameters: { layout: 'fullscreen' },
   tags: ['!autodocs'],
 } satisfies Meta;

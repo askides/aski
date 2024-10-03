@@ -19,7 +19,7 @@ import { Shell } from '~elements/Shell';
 import { Sidebar } from '~elements/Sidebar';
 import { Table } from '~elements/Table';
 
-export function InvoicesExample() {
+export function InvoicesPage() {
   return (
     <Shell
       Navbar={
