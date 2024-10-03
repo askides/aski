@@ -1,8 +1,8 @@
 import { Button } from '@askides/elements';
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
+import { BluetoothSearching } from 'lucide-react';
 import React from 'react';
-import { ArrowBigLeft, BluetoothSearching, Dashboard } from 'lucide-react';
 
 const opts = {
   title: 'Elements/Button',
