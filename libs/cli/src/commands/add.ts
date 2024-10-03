@@ -60,6 +60,7 @@ async function downloadFile(
   });
 }
 
+// TODO: Optimize this.
 const getOutDir = (
   name: string,
   config: Awaited<ReturnType<typeof getConfig>>
@@ -69,6 +70,8 @@ const getOutDir = (
       return config!.dirs.elements;
     case 'examples':
       return config!.dirs.examples;
+    case 'chunks':
+      return config!.dirs.chunks;
     default:
       throw new Error('Invalid directory name!');
   }
