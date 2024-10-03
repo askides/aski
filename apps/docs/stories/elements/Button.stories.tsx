@@ -1,6 +1,8 @@
 import { Button } from '@askides/elements';
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
+import React from 'react';
+import { ArrowBigLeft, BluetoothSearching, Dashboard } from 'lucide-react';
 
 const opts = {
   title: 'Elements/Button',
@@ -36,6 +38,15 @@ export const Ni: Story = {
 
 export const San: Story = {
   args: { art: 'san' },
+};
+
+export const Icon = {
+  render: ({ children, ...rest }) => (
+    <Button {...rest} art="ni">
+      <BluetoothSearching size={16} />
+      <span>{children}</span>
+    </Button>
+  ),
 };
 
 export default opts;
